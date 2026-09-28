@@ -87,7 +87,17 @@ details{background:#fff;border:2px solid #E9D5FF;border-radius:14px;padding:14px
 .footer{padding:30px 0;text-align:center;color:var(--muted)}
 .float-wpp{position:fixed;right:18px;bottom:18px;width:60px;height:60px;background:#22C55E;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.8rem;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:60}
 
-/* reveal */
+.mural-form{background:#fff;border:2px solid var(--ink,#2D1B2E);border-radius:22px;padding:26px;margin-top:24px;box-shadow:6px 6px 0 #F9A8D4}
+.mural-form h3{margin-top:0}
+.mural-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.mural-form input,.mural-form select,.mural-form textarea{width:100%;border:2px solid #E9D5FF;border-radius:12px;padding:12px 14px;font-size:1rem;font-family:inherit}
+.mural-form input:focus,.mural-form select:focus,.mural-form textarea:focus{outline:3px solid #F9A8D4}
+.mural-form textarea{resize:vertical;margin:10px 0}
+.stars{display:flex;gap:4px;margin:4px 0 6px}
+.stars button{background:none;border:0;font-size:1.8rem;cursor:pointer;color:#E5C07B;padding:0 2px}
+.stars button.on{color:#EC4899}
+.hearts{color:#EC4899;letter-spacing:2px}
+@media(max-width:640px){.mural-grid{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.visible{opacity:1;transform:none}
 
 @media(max-width:900px){

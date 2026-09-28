@@ -144,16 +144,28 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS PLACEHOLDER -->
-<section class="section container">
+<!-- MURAL INTERATIVO -->
+<section class="section container" id="mural">
   <p class="section-tag">Mural do orgulho</p>
   <h2>Quem estudou, <em>passou</em> ♡</h2>
-  <div class="grid3">
-    <blockquote class="quote reveal">“Eu odiava matemática e passei a entender de verdade. A Bárbara explica com calma!”<footer>— Aluna do Ensino Médio *</footer></blockquote>
-    <blockquote class="quote reveal">“Meu filho subiu a nota em 2 meses de reforço. Recomendo demais!”<footer>— Mãe de aluno *</footer></blockquote>
-    <blockquote class="quote reveal">“Passei no vestibular graças às aulas focadas em exercícios!”<footer>— Ex-aluno *</footer></blockquote>
-  </div>
-  <p class="micro center">* Depoimentos ilustrativos — vamos trocar pelos reais assim que você me mandar.</p>
+  <p class="micro">Alunas, alunos, mães e pais podem deixar seu recado aqui — sem conta, sem cadastro. Cada mensagem passa por aprovação antes de aparecer. ♡</p>
+  <div id="muralList" class="grid3"></div>
+  <form id="muralForm" class="mural-form">
+    <h3>Deixe seu recado 💌</h3>
+    <div class="mural-grid">
+      <input id="mNome" type="text" maxlength="60" placeholder="Seu nome (ex: Maria)" required>
+      <select id="mRelacao">
+        <option>Aluna(o)</option><option>Mãe / Pai</option><option>Ex-aluna(o)</option><option>Outro</option>
+      </select>
+    </div>
+    <div class="stars" id="mStars" title="Sua nota">
+      <button type="button" data-s="1">♡</button><button type="button" data-s="2">♡</button><button type="button" data-s="3">♡</button><button type="button" data-s="4">♡</button><button type="button" data-s="5" class="on">♡</button>
+    </div>
+    <textarea id="mMsg" rows="3" maxlength="500" placeholder="Conte como foi sua experiência…" required></textarea>
+    <input id="mTrap" type="text" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="btn btn-dark" type="submit" id="mSend">Publicar recado</button>
+    <p class="micro" id="mStatus"></p>
+  </form>
 </section>
 
 <!-- FAQ -->
@@ -186,6 +198,8 @@
 
 <a class="float-wpp" target="_blank" rel="noopener" aria-label="WhatsApp" href="https://wa.me/5549991887763?text=Ol%C3%A1%20B%C3%A1rbara!%20Vi%20seu%20site!">✆</a>
 
+<script src="supabase-config.js"></script>
+<script src="mural.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
