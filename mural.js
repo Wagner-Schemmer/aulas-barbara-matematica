@@ -6,9 +6,9 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
   const track = document.getElementById("muralTrack");
   const form = document.getElementById("muralForm");
   const status = document.getElementById("mStatus");
-  let stars = 5;
+  let stars = 10;
   const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const hearts = n => "♥".repeat(n) + "♡".repeat(5 - n);
+  const hearts = n => { n = Math.max(0, Math.min(10, n || 0)); return "♥".repeat(n) + "♡".repeat(10 - n); };
   const ready = !!(cfg.url && cfg.anonKey);
   const sb = ready ? createClient(cfg.url, cfg.anonKey) : null;
 
@@ -26,18 +26,18 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
   const card = d => `<blockquote class="quote slide">“${esc(d.mensagem)}”<footer>— ${esc(d.nome)} · ${esc(d.relacao)} <span class="hearts">${hearts(d.estrelas)}</span></footer></blockquote>`;
 
   function paint(items) {
-    const base = items.length ? items : [{ nome: "Mural fresquinho", relacao: "aguardando", mensagem: "Nenhum recado ainda — o seu pode ser o primeiro! ♡", estrelas: 5 }];
+    const base = items.length ? items : [{ nome: "Mural fresquinho", relacao: "aguardando", mensagem: "Nenhum recado ainda — o seu pode ser o primeiro! ♡", estrelas: 10 }];
     const reps = base.length < 4 ? 4 : 2;
     track.innerHTML = Array(reps).fill(base.map(card).join("")).join("");
     track.style.animationDuration = Math.max(18, base.length * reps * 4) + "s";
   }
 
   async function load() {
-    if (!sb) { paint([{ nome: "Ativando o mural", relacao: "mural", mensagem: "Estamos ligando o mural agora — volta em instantes! ♡", estrelas: 5 }]); return; }
+    if (!sb) { paint([{ nome: "Ativando o mural", relacao: "mural", mensagem: "Estamos ligando o mural agora — volta em instantes! ♡", estrelas: 10 }]); return; }
     const { data, error } = await sb.from("depoimentos")
       .select("nome,relacao,mensagem,estrelas").eq("aprovado", true)
       .order("criado_em", { ascending: false }).limit(30);
-    paint(error ? [{ nome: "Ops", relacao: "offline", mensagem: "Não consegui carregar agora. Tenta de novo em instantes ♡", estrelas: 5 }] : data);
+    paint(error ? [{ nome: "Ops", relacao: "offline", mensagem: "Não consegui carregar agora. Tenta de novo em instantes ♡", estrelas: 10 }] : data);
   }
 
   let lastSent = 0;
@@ -59,7 +59,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
     form.reset();
     nomeInput.disabled = false;
     nomeInput.placeholder = "Seu nome (ex: Maria)";
-    stars = 5;
+    stars = 10;
     document.querySelectorAll("#mStars button").forEach(x => x.classList.toggle("on", true));
     load();
   });

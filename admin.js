@@ -5,7 +5,7 @@ const cfg = window.MURAL_CONFIG || {};
 const $ = id => document.getElementById(id);
 const msg = (id, t, ok) => { const e = $(id); e.textContent = t; e.className = "amSG" + (ok === true ? " ok" : ok === false ? " err" : ""); };
 const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const hearts = n => "♥".repeat(n) + "♡".repeat(5 - n);
+const hearts = n => { n = Math.max(0, Math.min(10, n || 0)); return "♥".repeat(n) + "♡".repeat(10 - n); };
 
 if (!cfg.url || !cfg.anonKey) {
   msg("aLoginMsg", "Painel ainda ligando… volta em instantes ♡", false);

@@ -4,7 +4,7 @@ create table if not exists depoimentos (
   nome text not null check (char_length(nome) between 2 and 60),
   relacao text not null default 'Aluna(o)',
   mensagem text not null check (char_length(mensagem) between 4 and 500),
-  estrelas int not null default 5 check (estrelas between 1 and 5),
+  estrelas int not null default 10 check (estrelas between 1 and 10),
   aprovado boolean not null default false,
   criado_em timestamptz not null default now()
 );
