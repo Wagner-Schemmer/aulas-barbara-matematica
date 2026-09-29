@@ -103,6 +103,9 @@ details{background:#fff;border:2px solid #E9D5FF;border-radius:14px;padding:14px
 @keyframes slide{to{transform:translateX(-50%)}}
 .quote.slide{flex:0 0 330px;margin:0}
 @media(prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto}}
+.anon{display:flex;gap:8px;align-items:center;margin:2px 0 4px;font-size:.92rem;cursor:pointer}
+.anon input{width:18px;height:18px;accent-color:#EC4899}
+.mural-form input:disabled{opacity:.6}
 @media(max-width:640px){.quote.slide{flex-basis:270px}.mural-grid{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.visible{opacity:1;transform:none}
 

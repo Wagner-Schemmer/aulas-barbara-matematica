@@ -14,6 +14,12 @@
     stars = +b.dataset.s;
     document.querySelectorAll("#mStars button").forEach(x => x.classList.toggle("on", +x.dataset.s <= stars));
   });
+  const anonBox = document.getElementById("mAnon");
+  const nomeInput = document.getElementById("mNome");
+  anonBox.addEventListener("change", () => {
+    nomeInput.disabled = anonBox.checked;
+    nomeInput.placeholder = anonBox.checked ? "Anônimo 🕵️" : "Seu nome (ex: Maria)";
+  });
 
   const card = d => `<blockquote class="quote slide">“${esc(d.mensagem)}”<footer>— ${esc(d.nome)} · ${esc(d.relacao)} <span class="hearts">${hearts(d.estrelas)}</span></footer></blockquote>`;
 
@@ -42,10 +48,11 @@
     e.preventDefault();
     if (document.getElementById("mTrap").value) return;
     if (!ready) { status.textContent = "Mural ativando… tenta de novo em instantes ♡"; return; }
-    const nome = document.getElementById("mNome").value.trim();
+    const anon = anonBox.checked;
+    const nome = anon ? "Anônimo 🕵️" : nomeInput.value.trim();
     const relacao = document.getElementById("mRelacao").value;
     const mensagem = document.getElementById("mMsg").value.trim();
-    if (nome.length < 2 || mensagem.length < 4) { status.textContent = "Escreve seu nome e um recadinho maior ♡"; return; }
+    if ((!anon && nomeInput.value.trim().length < 2) || mensagem.length < 4) { status.textContent = "Escreve seu nome e um recadinho maior ♡"; return; }
     if (Date.now() - lastSent < 30000) { status.textContent = "Espera uns segundinhos antes de enviar outro ♡"; return; }
     lastSent = Date.now();
     status.textContent = "Publicando…";
@@ -58,6 +65,8 @@
       if (!r.ok) throw 0;
       status.textContent = "Publicado! Olha ele passando no carrossel ♡";
       form.reset();
+      nomeInput.disabled = false;
+      nomeInput.placeholder = "Seu nome (ex: Maria)";
       stars = 5;
       document.querySelectorAll("#mStars button").forEach(x => x.classList.toggle("on", true));
       load();
