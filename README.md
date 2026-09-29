@@ -16,6 +16,12 @@ aulas-barbara-matematica/
 ## Rodar
 Go Live no VSCode (index.html) ou `python3 -m http.server 8000`
 
+## Painel da professora (`admin.html`)
+A Bárbara edita sozinha: telefone, preços, foto, apaga recados, troca a senha.
+1. Rode `supabase-site.sql` no SQL Editor (1 vez)
+2. Dashboard → Authentication → Users → **Add user** (e-mail dela + senha) → passe login e URL `/admin.html` para ela
+3. Site lê tudo da tabela `site_config` (com valores padrão se vazio)
+
 ## Mural de recados (alunas/mães escrevem, sem conta, aparece na hora)
 OBRIGATÓRIO (5 min, 1 vez só):
 1. Crie projeto grátis em supabase.com → SQL Editor → rode `supabase-mural.sql`

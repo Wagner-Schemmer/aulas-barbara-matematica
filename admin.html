@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área da Professora — Bárbara</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.admin{max-width:720px;margin:0 auto;padding:24px 20px 60px}
+.admin h1{font-family:'Caveat',cursive;font-size:2.4rem}
+.acard{background:#fff;border:2px solid #2D1B2E;border-radius:20px;padding:22px;margin:16px 0;box-shadow:5px 5px 0 #F9A8D4}
+.acard h2{margin-top:0;font-size:1.15rem}
+.acard input,.acard select{width:100%;border:2px solid #E9D5FF;border-radius:12px;padding:12px;font-size:1rem;font-family:inherit;margin:6px 0}
+.acard input:focus{outline:3px solid #F9A8D4}
+.arow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.amSG{min-height:1.4em;font-size:.9rem;color:#7A6A7B}
+.amSG.ok{color:#16a34a}.amSG.err{color:#dc2626}
+.arec{border:2px solid #F5D0FE;border-radius:12px;padding:12px;margin:8px 0;background:#FFFBF2}
+.arec footer{font-weight:700;font-size:.85rem;margin-top:6px}
+.arec .del{background:#fee2e2;border:2px solid #2D1B2E;border-radius:10px;padding:6px 12px;cursor:pointer;font-weight:700;margin-top:8px}
+.aphoto{max-width:220px;border-radius:16px;border:2px solid #2D1B2E;display:block;margin:10px 0}
+.back{display:inline-block;margin-bottom:8px;color:#7C3AED;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<main class="admin">
+  <a class="back" href="index.html">← voltar ao site</a>
+  <h1>🔒 Área da Professora</h1>
+  <p class="micro">Oi, Bárbara! Aqui você muda telefone, preços, foto e apaga recados — sem programar nada. ♡</p>
+
+  <section class="acard" id="loginBox">
+    <h2>Entrar</h2>
+    <input id="aEmail" type="email" placeholder="Seu e-mail" autocomplete="username">
+    <input id="aPass" type="password" placeholder="Sua senha" autocomplete="current-password">
+    <div class="arow"><button class="btn btn-dark" id="aLogin">Entrar</button></div>
+    <p class="amSG" id="aLoginMsg"></p>
+  </section>
+
+  <div id="panel" style="display:none">
+    <section class="acard">
+      <h2>📞 Telefone / WhatsApp</h2>
+      <input id="cWa" inputmode="numeric" placeholder="Ex: 5549991887763 (país+DDD+número)">
+      <p class="micro">Só números, com 55 na frente. Aparece em <span id="cWaPrev">—</span></p>
+      <div class="arow"><button class="btn btn-dark" id="cWaSave">Salvar telefone</button></div>
+      <p class="amSG" id="cWaMsg"></p>
+    </section>
+
+    <section class="acard">
+      <h2>💰 Preços por aula</h2>
+      <input id="cOn" inputmode="numeric" placeholder="Online — ex: 45">
+      <input id="cPre" inputmode="numeric" placeholder="Presencial — ex: 50">
+      <div class="arow"><button class="btn btn-dark" id="cPrSave">Salvar preços</button></div>
+      <p class="amSG" id="cPrMsg"></p>
+    </section>
+
+    <section class="acard">
+      <h2>📸 Sua foto</h2>
+      <img id="cPhotoPrev" class="aphoto" src="barbara.jpg" alt="Foto atual">
+      <input id="cPhoto" type="file" accept="image/*">
+      <div class="arow"><button class="btn btn-dark" id="cPhSave">Trocar foto</button></div>
+      <p class="amSG" id="cPhMsg"></p>
+    </section>
+
+    <section class="acard">
+      <h2>💌 Recados do mural <button class="btn" id="cReLoad" style="padding:6px 14px">↺</button></h2>
+      <div id="cRecList"></div>
+    </section>
+
+    <section class="acard">
+      <h2>🔑 Trocar senha</h2>
+      <input id="cPass" type="password" placeholder="Nova senha (mínimo 6 letras/números)" autocomplete="new-password">
+      <div class="arow"><button class="btn btn-dark" id="cPassSave">Trocar senha</button></div>
+      <p class="amSG" id="cPassMsg"></p>
+    </section>
+
+    <div class="arow"><button class="btn" id="aLogout">Sair</button></div>
+  </div>
+</main>
+<script src="supabase-config.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
