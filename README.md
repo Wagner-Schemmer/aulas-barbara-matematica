@@ -16,11 +16,12 @@ aulas-barbara-matematica/
 ## Rodar
 Go Live no VSCode (index.html) ou `python3 -m http.server 8000`
 
-## Mural de recados (alunas/mães escrevem, sem conta)
+## Mural de recados (alunas/mães escrevem, sem conta, aparece na hora)
+OBRIGATÓRIO (5 min, 1 vez só):
 1. Crie projeto grátis em supabase.com → SQL Editor → rode `supabase-mural.sql`
 2. Project Settings → API: copie `URL` + `anon public` para `supabase-config.js`
-3. Pronto: recados entram como `aprovado=false`; a Bárbara aprova no dashboard e aparece no site
-4. **Sem config?** O formulário manda o recado pelo WhatsApp dela e ela publica depois — funciona desde o dia 1
+3. Pronto: recado salva direto e entra no carrossel automático (sem WhatsApp, sem moderação)
+4. Spam? Apague no dashboard (Table Editor). Para reativar moderação: fale com o Wagner
 
 ## Personalizar (com a Bárbara)
 1. `index.html` — trocar avatar `B ♡` por `<img src="barbara.jpg">`

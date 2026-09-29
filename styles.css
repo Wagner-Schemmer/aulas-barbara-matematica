@@ -97,7 +97,13 @@ details{background:#fff;border:2px solid #E9D5FF;border-radius:14px;padding:14px
 .stars button{background:none;border:0;font-size:1.8rem;cursor:pointer;color:#E5C07B;padding:0 2px}
 .stars button.on{color:#EC4899}
 .hearts{color:#EC4899;letter-spacing:2px}
-@media(max-width:640px){.mural-grid{grid-template-columns:1fr}}
+.carousel{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:16px;width:max-content;animation:slide 30s linear infinite;padding:6px 0}
+.carousel:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.quote.slide{flex:0 0 330px;margin:0}
+@media(prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto}}
+@media(max-width:640px){.quote.slide{flex-basis:270px}.mural-grid{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.visible{opacity:1;transform:none}
 
 @media(max-width:900px){

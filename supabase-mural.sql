@@ -11,7 +11,9 @@ create table if not exists depoimentos (
 
 alter table depoimentos enable row level security;
 
--- Visitantes só LEEM recados aprovados (moderação pela Bárbara no dashboard)
+-- Visitantes só LEEM recados aprovados.
+-- O site publica com aprovado=true (aparece na hora); para voltar a moderação,
+-- troque o insert no mural.js para aprovado:false e aprove no dashboard.
 drop policy if exists "leitura aprovados" on depoimentos;
 create policy "leitura aprovados" on depoimentos
   for select using (aprovado = true);
