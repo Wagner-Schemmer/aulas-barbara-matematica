@@ -24,10 +24,8 @@ OBRIGATÓRIO (5 min, 1 vez só):
 4. Spam? Apague no dashboard (Table Editor). Para reativar moderação: fale com o Wagner
 
 ## Personalizar (com a Bárbara)
-1. `index.html` — trocar avatar `B ♡` por `<img src="barbara.jpg">`
-2. Depoimentos marcados com `*` → depoimentos reais
-3. Preço / aula experimental → seção FAQ + CTA final
-4. Instagram: [@babi.vbtt](https://instagram.com/babi.vbtt) • WhatsApp: (49) 99188-7763
+1. ✅ Foto `barbara.jpg` no ar
+2. Preços: online R$45, presencial R$50 (seção #precos + FAQ)
 
 ## Deploy
 Vercel / Netlify: arrastar a pasta ou conectar o repo `aulas-barbara-matematica`.
