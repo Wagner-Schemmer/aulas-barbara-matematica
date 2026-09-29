@@ -87,7 +87,14 @@ details{background:#fff;border:2px solid #E9D5FF;border-radius:14px;padding:14px
 
 /* footer + float */
 .footer{padding:30px 0;text-align:center;color:var(--muted)}
-.float-wpp{position:fixed;right:18px;bottom:18px;width:60px;height:60px;background:#22C55E;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.8rem;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:60}
+.float-wpp{position:fixed;right:18px;bottom:18px;width:60px;height:60px;background:#22C55E;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.8rem;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:60;transition:transform .2s}
+.float-wpp:hover{transform:scale(1.12) rotate(8deg)}
+.float-wpp::before,.float-wpp::after{content:"";position:absolute;inset:0;border-radius:50%;border:3px solid #22C55E;animation:ping 2.2s ease-out infinite;pointer-events:none}
+.float-wpp::after{animation-delay:1.1s}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+.float-wpp .tip{position:absolute;right:70px;top:50%;transform:translateY(-50%) translateX(8px);background:#fff;color:var(--ink);font-size:.8rem;font-weight:800;padding:8px 14px;border-radius:999px;border:2px solid var(--ink);white-space:nowrap;opacity:0;transition:.25s;pointer-events:none;font-family:'Poppins',sans-serif}
+.float-wpp:hover .tip{opacity:1;transform:translateY(-50%) translateX(0)}
+@media(prefers-reduced-motion:reduce){.float-wpp::before,.float-wpp::after{animation:none}}
 
 .mural-form{background:#fff;border:2px solid var(--ink,#2D1B2E);border-radius:22px;padding:26px;margin-top:24px;box-shadow:6px 6px 0 #F9A8D4}
 .mural-form h3{margin-top:0}
