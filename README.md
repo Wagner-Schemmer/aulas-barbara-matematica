@@ -1,5 +1,8 @@
 # Bárbara • Aulas Particulares de Matemática
 
+[![Live](https://img.shields.io/badge/demo-ao_vivo-4ade80?style=for-the-badge&logo=vercel&logoColor=white)](https://barbara-matematica.vercel.app)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
+
 Site institucional para a professora Bárbara (licencianda em Matemática - IFFar).
 Aulas particulares em Frederico Westphalen (presencial) e online para todo Brasil.
 
