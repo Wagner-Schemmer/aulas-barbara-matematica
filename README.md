@@ -17,6 +17,14 @@
 
 **Média final:** aprovado com louvor. 🎓
 
+## Colagem ✂️
+
+**Como funciona + quanto custa:**
+<a href="https://barbara-matematica.vercel.app"><img src="docs/barb-como-funciona.png" alt="como funciona e preços" /></a>
+
+**O mural em funcionamento (recados entrando na hora):**
+<a href="https://barbara-matematica.vercel.app"><img src="docs/barb-mural.png" alt="mural de depoimentos" /></a>
+
 ## Bilhetes (como funciona)
 
 - **Mural:** projeto grátis no Supabase → rodar `supabase-mural.sql` → colar `URL` + `anon` em `supabase-config.js`. Pronto, recado entra no carrossel sozinho.
@@ -26,6 +34,18 @@
 ## Matéria dada (estrutura)
 
 `index.html` (a aula) · `admin.html` (a sala dos professores) · `styles.css` (rosa + lilás, Caveat + Poppins) · `mural.js` (o correio) · `supabase-*.sql` (o arquivo).
+
+## Material escolar 🎒
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,supabase&theme=light" alt="HTML CSS JS Supabase" />
+</div>
+
+Sem build, sem framework. Realtime e Auth do Supabase.
+
+## Quadro de honra (star history)
+
+<a href="https://www.star-history.com/#Wagner-Schemmer/aulas-barbara-matematica&Date"><img alt="Star History" src="https://api.star-history.com/svg?repos=Wagner-Schemmer/aulas-barbara-matematica&type=Date" /></a>
 
 ## Lição de casa
 
