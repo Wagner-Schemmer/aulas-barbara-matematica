@@ -43,10 +43,6 @@
 
 Sem build, sem framework. Realtime e Auth do Supabase.
 
-## Quadro de honra (star history)
-
-<a href="https://www.star-history.com/#Wagner-Schemmer/aulas-barbara-matematica&Date"><img alt="Star History" src="https://api.star-history.com/svg?repos=Wagner-Schemmer/aulas-barbara-matematica&type=Date" /></a>
-
 ## Lição de casa
 
 ```bash
